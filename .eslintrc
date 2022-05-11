@@ -20,6 +20,7 @@
         },
         "ecmaVersion": "latest",
         "sourceType": "module",
+        "tsconfigRootDir": ".",
         "project": "./tsconfig.json"
     },
     "plugins": [
@@ -54,6 +55,13 @@
     "settings": {
         "react": {
             "version": "detect"
+        },
+        "import/resolver": {
+          "node": {
+            "paths": [
+              "."
+            ]
+          }
         }
     }
 }
