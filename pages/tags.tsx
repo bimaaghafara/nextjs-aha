@@ -1,3 +1,3 @@
-import Tags from 'src/domains/tags';
+import Tags from 'src/domains/Tags';
 
 export default Tags;

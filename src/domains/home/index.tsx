@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import PageLayout from 'src/components/PageLayout';
 import homeService from './service';
 
 export default function Home() {
@@ -13,5 +14,9 @@ export default function Home() {
       });
   }, []);
 
-  return <div>Homepage</div>;
+  return (
+    <PageLayout>
+      <div>Homepage</div>
+    </PageLayout>
+  );
 }
