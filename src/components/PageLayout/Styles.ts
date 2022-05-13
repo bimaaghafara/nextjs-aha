@@ -16,12 +16,20 @@ export const Styles = SxObject({
       boxSizing: 'border-box'
     }
   },
+  list: {
+    padding: 0
+  },
   logo: {
     justifyContent: 'center',
     '& p': {
-      marginTop: '24px',
-      marginBottom: '44px',
+      marginTop: '37px',
+      marginBottom: '43px',
       fontSize: '13px',
+      lineHeight: '15px',
+      fontWeight: 700,
+      letterSpacing: '-0.05em',
+      width: '35px',
+      textAlign: 'center',
       background: 'linear-gradient(270deg, #FFD25F 0.13%, #FF5C01 100%)',
       backgroundClip: 'text',
       color: 'transparent'
@@ -30,7 +38,7 @@ export const Styles = SxObject({
   listItemButton: {
     justifyContent: 'center',
     paddingTop: 0,
-    paddingBottom: '42px'
+    marginBottom: '42px'
   },
   listItemIcon: {
     flexDirection: 'column',
@@ -38,14 +46,21 @@ export const Styles = SxObject({
     color: '#fff'
   },
   menuIcon: {
+    height: '24px',
     '& svg path': {
       fill: '#8A8A8F'
+    },
+    '&.menuIcon-active svg path': {
+      fill: '#FFF'
     }
   },
   listItemText: {
     margin: 0,
     '& span': {
-      fontSize: '12px'
+      marginTop: '1px',
+      fontSize: '12px',
+      lineHeight: '150%',
+      letterSpacing: '0.4px'
     }
   },
   content: {

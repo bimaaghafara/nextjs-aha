@@ -21,14 +21,14 @@ export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <Box sx={sx.root}>
       <Drawer sx={sx.drawer} variant="permanent" anchor="left">
-        <List>
+        <List sx={sx.list}>
           <ListItem disablePadding sx={sx.logo}>
             <Typography>LOGO</Typography>
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton sx={sx.listItemButton}>
               <ListItemIcon sx={sx.listItemIcon}>
-                <Box sx={sx.menuIcon}>
+                <Box sx={sx.menuIcon} className="menuIcon-active">
                   <MenuIcon />
                 </Box>
                 <ListItemText primary="Home" sx={sx.listItemText} />
