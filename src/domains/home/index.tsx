@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
 
   return (
-    <PageLayout activeMenu="home" withNotificationMenus={['tags']}>
+    <PageLayout activeMenu="home" withNotificationMenus={['tags']} isBottomNav>
       <div>Homepage</div>
     </PageLayout>
   );
