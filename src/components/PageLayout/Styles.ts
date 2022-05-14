@@ -38,7 +38,30 @@ export const Styles = SxObject({
   listItemButton: {
     justifyContent: 'center',
     paddingTop: 0,
-    marginBottom: '42px'
+    marginBottom: '42px',
+    '& svg path': {
+      fill: '#8A8A8F'
+    },
+    '&.menuIcon-active svg path': {
+      fill: '#FFF'
+    },
+    '& span': {
+      color: 'transparent'
+    },
+    '&.menuIcon-active span': {
+      color: '#FFF'
+    },
+    '&.with-notification::after': {
+      backgroundImage: 'url("/img/ellipse.png")',
+      backgroundSize: '7px 7px',
+      display: 'inline-block',
+      width: '7px',
+      height: '7px',
+      position: 'absolute',
+      top: '-4px',
+      marginRight: '-25px',
+      content: '""'
+    }
   },
   listItemIcon: {
     flexDirection: 'column',
@@ -46,13 +69,7 @@ export const Styles = SxObject({
     color: '#fff'
   },
   menuIcon: {
-    height: '24px',
-    '& svg path': {
-      fill: '#8A8A8F'
-    },
-    '&.menuIcon-active svg path': {
-      fill: '#FFF'
-    }
+    height: '24px'
   },
   listItemText: {
     margin: 0,

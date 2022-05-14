@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
 
   return (
-    <PageLayout>
+    <PageLayout activeMenu="home" withNotificationMenus={['tags']}>
       <div>Homepage</div>
     </PageLayout>
   );
