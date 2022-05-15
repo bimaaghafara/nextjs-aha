@@ -11,6 +11,19 @@ export const Styles = SxObject({
     alignItems: 'center',
     paddingLeft: '20px'
   },
+  backToHome: {
+    display: 'flex',
+    alignItems: 'center',
+    color: '#fff',
+    cursor: 'pointer',
+    '& svg': {
+      fontSize: '42px',
+      marginLeft: '-9px'
+    },
+    '& p': {
+      fontSize: '24px'
+    }
+  },
   content: {
     flexGrow: 1,
     padding: '20px',
