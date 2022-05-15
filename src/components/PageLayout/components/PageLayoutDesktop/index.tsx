@@ -2,11 +2,11 @@ import { useRouter } from 'next/router';
 
 // styles & components
 import { Styles as sx } from './Styles';
+import Logo from '../Logo';
 import MenuIcon from 'public/img/fa-solid_pencil-ruler.svg';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -37,8 +37,8 @@ export default function PageLayoutDesktop({
     <Box sx={sx.root}>
       <Drawer sx={sx.drawer} variant="permanent" anchor="left">
         <List sx={sx.list}>
-          <ListItem disablePadding sx={sx.logo}>
-            <Typography>LOGO</Typography>
+          <ListItem disablePadding sx={sx.logoWrapper}>
+            <Logo />
           </ListItem>
           {menus.map((menu: Menu) => (
             <ListItem key={menu.key} disablePadding>

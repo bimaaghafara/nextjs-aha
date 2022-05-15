@@ -19,20 +19,11 @@ export const Styles = SxObject({
   list: {
     padding: 0
   },
-  logo: {
+  logoWrapper: {
     justifyContent: 'center',
     '& p': {
       marginTop: '37px',
-      marginBottom: '43px',
-      fontSize: '13px',
-      lineHeight: '15px',
-      fontWeight: 700,
-      letterSpacing: '-0.05em',
-      width: '35px',
-      textAlign: 'center',
-      background: 'linear-gradient(270deg, #FFD25F 0.13%, #FF5C01 100%)',
-      backgroundClip: 'text',
-      color: 'transparent'
+      marginBottom: '43px'
     }
   },
   listItemButton: {
