@@ -6,6 +6,7 @@ import Logo from '../Logo';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import MenuIcon from 'public/img/fa-solid_pencil-ruler.svg';
 
 // types
 import { PageLayoutMobileProps } from './types';
@@ -30,7 +31,14 @@ export default function PageLayoutMobile({
         )}
       </Box>
       <Box sx={sx.content}>{children}</Box>
-      {isBottomNav && <div>Bottom Nav</div>}
+      {isBottomNav && (
+        <Box sx={sx.bottomNav}>
+          <Box>
+            <MenuIcon />
+            <MenuIcon onClick={() => router.push('/tags')} />
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 }

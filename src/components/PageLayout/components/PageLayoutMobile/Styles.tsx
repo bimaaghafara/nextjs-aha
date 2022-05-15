@@ -29,5 +29,31 @@ export const Styles = SxObject({
     padding: '20px',
     paddingTop: '28px',
     paddingBottom: 0
+  },
+  bottomNav: {
+    height: '66px',
+    position: 'fixed',
+    bottom: 0,
+    width: '100%',
+    background: 'rgba(24, 24, 24, 0.2)',
+    boxShadow: 'inset 0px 0.5px 0px rgba(0, 0, 0, 0.8)',
+    backdropFilter: 'blur(54.3656px)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    '& > *': {
+      width: '98px',
+      display: 'flex',
+      justifyContent: 'space-between'
+    },
+    '& svg': {
+      cursor: 'pointer'
+    },
+    '& svg path': {
+      fill: '#fff'
+    },
+    '& svg:nth-child(2) path': {
+      fill: '#8A8A8F'
+    }
   }
 });
