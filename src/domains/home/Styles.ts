@@ -70,6 +70,13 @@ export const Styles = SxObject({
     paddingLeft: '10px',
     paddingBottom: '4px'
   },
+  slider: {
+    color: 'transparent',
+    width: '100%',
+    '& .MuiSlider-track': {
+      background: 'linear-gradient(to right, red , yellow)'
+    }
+  },
   buttonSearch: {
     width: 'calc(100% - 40px)',
     height: '40px',
@@ -90,7 +97,7 @@ export const Styles = SxObject({
     [isDesktop]: {
       width: '343px',
       bottom: 0,
-      marginBottom: '83px'
+      marginBottom: '87px'
     }
   }
 });
