@@ -15,6 +15,7 @@ export default function PageLayout({
   isBottomNav
 }: PageLayoutProps) {
   const isMobile = useMediaQuery('(max-width:600px)');
+  const isDesktop = useMediaQuery('(min-width:601px)');
 
   const pageLayoutMobileProps = {
     children,
@@ -32,5 +33,9 @@ export default function PageLayout({
     withNotificationMenus
   };
 
-  return <PageLayoutDesktop {...pageLayoutDesktopProps} />;
+  if (isDesktop) {
+    return <PageLayoutDesktop {...pageLayoutDesktopProps} />;
+  }
+
+  return null;
 }
