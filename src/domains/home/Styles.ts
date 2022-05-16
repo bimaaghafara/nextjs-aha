@@ -73,8 +73,39 @@ export const Styles = SxObject({
   slider: {
     color: 'transparent',
     width: '100%',
+    height: '8px',
+    paddingTop: '26px',
+    '& .MuiSlider-mark': {
+      display: 'none'
+    },
+    '& .MuiSlider-rail': {
+      background: '#fff',
+      opacity: 0.3
+    },
     '& .MuiSlider-track': {
-      background: 'linear-gradient(to right, red , yellow)'
+      background: 'linear-gradient(to right, #FF5C01 , #FFD25F)',
+      border: 'none'
+    },
+    '& .MuiSlider-thumb': {
+      border: '6px solid #FFD05D',
+      background: '#1b1b1b',
+      boxShadow: 'none',
+      height: '26px',
+      width: '26px',
+      '&:hover': {
+        boxShadow: 'none'
+      },
+      '&:before': {
+        boxShadow: 'none'
+      }
+    },
+    '& .MuiSlider-markLabel': {
+      color: '#fff',
+      fontWeight: 500,
+      fontSize: '16px',
+      letterSpacing: '0.15px',
+      lineHeight: '24px',
+      marginTop: '11px'
     }
   },
   buttonSearch: {

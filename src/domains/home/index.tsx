@@ -11,9 +11,10 @@ import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider';
 
 export default function Home() {
+  const defaultPerPagesIndex = 2;
   const perPages = [3, 6, 9, 12, 15, 50];
   const [keyword, setKeyword] = useState<string>();
-  const [perPage, setPerPage] = useState<number>(perPages[0]);
+  const [perPage, setPerPage] = useState<number>(perPages[defaultPerPagesIndex]);
 
   useEffect(() => {
     homeService
@@ -49,7 +50,7 @@ export default function Home() {
         </Typography>
         <Box sx={sx.perPage}>
           <Typography component="h3" sx={sx.perPageValue}>
-            30
+            {perPage}
           </Typography>
           <Typography sx={sx.perPageResults}>results</Typography>
         </Box>
@@ -57,7 +58,7 @@ export default function Home() {
           <Slider
             sx={sx.slider}
             aria-label="Per Page"
-            defaultValue={0}
+            defaultValue={defaultPerPagesIndex}
             min={0}
             step={1}
             max={perPages.length - 1}
