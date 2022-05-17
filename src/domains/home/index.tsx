@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import homeService from './service';
 
 // styles & component
@@ -11,10 +12,12 @@ import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider';
 
 export default function Home() {
+  const router = useRouter();
   const defaultPerPagesIndex = 2;
   const perPages = [3, 6, 9, 12, 15, 50];
   const [keyword, setKeyword] = useState<string>();
   const [perPage, setPerPage] = useState<number>(perPages[defaultPerPagesIndex]);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>();
 
   useEffect(() => {
     homeService
@@ -28,7 +31,10 @@ export default function Home() {
   }, []);
 
   const handleSearch = () => {
-    console.log(keyword, perPage);
+    setIsSubmitted(true);
+    if (keyword && perPage) {
+      router.push(`/results?keyword=${keyword}&perPage=${perPage}`);
+    }
   };
 
   return (
@@ -43,6 +49,8 @@ export default function Home() {
           fullWidth
           sx={sx.textfieldKeyword}
           onChange={(e) => setKeyword(e.target.value)}
+          error={isSubmitted && !keyword}
+          helperText={isSubmitted && !keyword && 'Search keyword is required!'}
         />
         <Box sx={sx.topLine} />
         <Typography component="h5" sx={sx.titleResults}>
