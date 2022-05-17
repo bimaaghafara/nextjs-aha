@@ -33,7 +33,7 @@ export default function Home() {
   const handleSearch = () => {
     setIsSubmitted(true);
     if (keyword && perPage) {
-      router.push(`/results?keyword=${keyword}&perPage=${perPage}`);
+      router.push(`/search?keyword=${keyword}&perPage=${perPage}`);
     }
   };
 
