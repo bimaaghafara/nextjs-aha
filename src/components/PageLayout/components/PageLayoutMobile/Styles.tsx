@@ -28,7 +28,8 @@ export const Styles = SxObject({
     flexGrow: 1,
     paddingLeft: '20px',
     paddingRight: '20px',
-    paddingBottom: 0
+    paddingBottom: 0,
+    overflow: 'auto'
   },
   bottomNav: {
     height: '66px',

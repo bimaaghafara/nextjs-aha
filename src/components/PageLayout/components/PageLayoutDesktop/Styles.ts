@@ -77,6 +77,7 @@ export const Styles = SxObject({
     minHeight: '100vh',
     display: 'flex',
     justifyContent: 'center',
+    overflow: 'auto',
     '& > *': {
       width: `${(100 * 725) / 985}%`
     }

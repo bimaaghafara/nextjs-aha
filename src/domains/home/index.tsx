@@ -44,7 +44,7 @@ export default function Home() {
           sx={sx.textfieldKeyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <Box sx={sx.line} />
+        <Box sx={sx.topLine} />
         <Typography component="h5" sx={sx.titleResults}>
           # Of Results Per Page
         </Typography>
@@ -56,7 +56,7 @@ export default function Home() {
         </Box>
         <Box>
           <Slider
-            sx={sx.slider}
+            sx={sx.slider(perPages.findIndex((e) => e === perPage))}
             aria-label="Per Page"
             defaultValue={defaultPerPagesIndex}
             min={0}
@@ -66,6 +66,7 @@ export default function Home() {
             marks={perPages.map((e, i) => ({ value: i, label: e }))}
           />
         </Box>
+        <Box sx={sx.bottomLine} />
         <Button variant="contained" sx={sx.buttonSearch} onClick={handleSearch}>
           Search
         </Button>

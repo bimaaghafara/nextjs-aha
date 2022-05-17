@@ -34,14 +34,14 @@ export const Styles = SxObject({
       marginTop: '20px'
     }
   },
-  line: {
+  topLine: {
+    marginTop: '30px',
+    marginBottom: '2px',
+    opacity: '0.1',
+    border: '1px solid #FFFFFF',
     display: 'none',
     [isDesktop]: {
-      display: 'block',
-      opacity: '0.1',
-      border: '1px solid #FFFFFF',
-      marginTop: '30px',
-      marginBottom: '2px'
+      display: 'block'
     }
   },
   titleResults: {
@@ -70,7 +70,7 @@ export const Styles = SxObject({
     paddingLeft: '10px',
     paddingBottom: '4px'
   },
-  slider: {
+  slider: (perPageIndex) => ({
     color: 'transparent',
     width: '100%',
     height: '8px',
@@ -97,15 +97,47 @@ export const Styles = SxObject({
       },
       '&:before': {
         boxShadow: 'none'
-      }
+      },
+      ...(perPageIndex === 0 && {
+        left: '4px !important'
+      }),
+      ...(perPageIndex === 5 && {
+        left: 'calc(100% - 8px) !important'
+      })
     },
     '& .MuiSlider-markLabel': {
+      opacity: 0.5,
       color: '#fff',
       fontWeight: 500,
       fontSize: '16px',
       letterSpacing: '0.15px',
       lineHeight: '24px',
-      marginTop: '11px'
+      marginTop: '11px',
+      '&[data-index="0"]': {
+        left: '4px !important'
+      },
+      '&[data-index="5"]': {
+        left: 'calc(100% - 8px) !important'
+      },
+      [`&[data-index="${perPageIndex}"]`]: {
+        opacity: 1,
+        ...(perPageIndex === 0 && {
+          left: '4px !important'
+        }),
+        ...(perPageIndex === 5 && {
+          left: 'calc(100% - 8px) !important'
+        })
+      }
+    }
+  }),
+  bottomLine: {
+    marginTop: '221px',
+    marginBottom: '210px',
+    opacity: '0.1',
+    border: '1px solid #FFFFFF',
+    [isDesktop]: {
+      marginTop: '30px',
+      marginBottom: '2px'
     }
   },
   buttonSearch: {
