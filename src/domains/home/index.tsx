@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
-import homeService from './service';
 
 // styles & component
 import { Styles as sx } from './Styles';
@@ -17,17 +16,6 @@ export default function Home() {
   const pageSizes = [3, 6, 9, 12, 15, 50];
   const [keyword, setKeyword] = useState<string>('');
   const [pageSize, setpageSize] = useState<number>(pageSizes[defaultpageSizesIndex]);
-
-  useEffect(() => {
-    homeService
-      .getUsers()
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
 
   const handleSearch = () => {
     router.push(`/search?keyword=${keyword}&pageSize=${pageSize}`);

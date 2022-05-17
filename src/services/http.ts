@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const http = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
+  baseURL: 'https://avl-frontend-exam.herokuapp.com/api',
   headers: {
     'Content-type': 'application/json'
   }
