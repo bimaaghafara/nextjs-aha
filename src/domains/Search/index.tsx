@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 // styles & components
@@ -9,31 +9,28 @@ import Typography from '@mui/material/Typography';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 // services
-import { getUsers } from './Services';
+import { useGetUsers } from './Services';
 
 export default function Search() {
   const router = useRouter();
+  const { data, isLoading, error } = useGetUsers(router.query, router.isReady);
 
-  useEffect(() => {
-    if (router.isReady) {
-      const { pageSize, keyword } = router.query;
-      getUsers({ pageSize, keyword })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [router.query, router.isReady]);
+  function renderContent() {
+    if (error) return 'Error';
+    if (isLoading || !data) return 'Loading...';
+    return JSON.stringify(data, null, 4);
+  }
 
   return (
     <PageLayout activeMenu="home" withNotificationMenus={['tags']}>
-      <Box sx={sx.topSection}>
-        <Box sx={sx.backToHome} onClick={() => router.push('/')}>
-          <ChevronLeftIcon />
-          <Typography>Results</Typography>
+      <Box sx={{ color: '#fff' }}>
+        <Box sx={sx.topSection}>
+          <Box sx={sx.backToHome} onClick={() => router.push('/')}>
+            <ChevronLeftIcon />
+            <Typography>Results</Typography>
+          </Box>
         </Box>
+        {renderContent()}
       </Box>
     </PageLayout>
   );
