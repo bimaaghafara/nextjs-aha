@@ -49,7 +49,7 @@ export const Styles = SxObject({
     fontSize: '24px',
     marginTop: '28px'
   },
-  perPage: {
+  pageSize: {
     display: 'flex',
     direction: 'row',
     alignItems: 'flex-end',
@@ -59,18 +59,18 @@ export const Styles = SxObject({
       marginTop: '20px'
     }
   },
-  perPageValue: {
+  pageSizeValue: {
     fontSize: '48px',
     lineHeight: '50px',
     fontWeight: 700
   },
-  perPageResults: {
+  pageSizeLabel: {
     fontSize: '16px',
     letterSpacing: '0.15px',
     paddingLeft: '10px',
     paddingBottom: '4px'
   },
-  slider: (perPageIndex) => ({
+  slider: (pageSizeIndex) => ({
     color: 'transparent',
     width: '100%',
     height: '8px',
@@ -98,10 +98,10 @@ export const Styles = SxObject({
       '&:before': {
         boxShadow: 'none'
       },
-      ...(perPageIndex === 0 && {
+      ...(pageSizeIndex === 0 && {
         left: '4px !important'
       }),
-      ...(perPageIndex === 5 && {
+      ...(pageSizeIndex === 5 && {
         left: 'calc(100% - 8px) !important'
       })
     },
@@ -119,12 +119,12 @@ export const Styles = SxObject({
       '&[data-index="5"]': {
         left: 'calc(100% - 8px) !important'
       },
-      [`&[data-index="${perPageIndex}"]`]: {
+      [`&[data-index="${pageSizeIndex}"]`]: {
         opacity: 1,
-        ...(perPageIndex === 0 && {
+        ...(pageSizeIndex === 0 && {
           left: '4px !important'
         }),
-        ...(perPageIndex === 5 && {
+        ...(pageSizeIndex === 5 && {
           left: 'calc(100% - 8px) !important'
         })
       }

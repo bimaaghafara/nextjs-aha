@@ -13,11 +13,10 @@ import Slider from '@mui/material/Slider';
 
 export default function Home() {
   const router = useRouter();
-  const defaultPerPagesIndex = 2;
-  const perPages = [3, 6, 9, 12, 15, 50];
-  const [keyword, setKeyword] = useState<string>();
-  const [perPage, setPerPage] = useState<number>(perPages[defaultPerPagesIndex]);
-  const [isSubmitted, setIsSubmitted] = useState<boolean>();
+  const defaultpageSizesIndex = 2;
+  const pageSizes = [3, 6, 9, 12, 15, 50];
+  const [keyword, setKeyword] = useState<string>('');
+  const [pageSize, setpageSize] = useState<number>(pageSizes[defaultpageSizesIndex]);
 
   useEffect(() => {
     homeService
@@ -31,10 +30,7 @@ export default function Home() {
   }, []);
 
   const handleSearch = () => {
-    setIsSubmitted(true);
-    if (keyword && perPage) {
-      router.push(`/search?keyword=${keyword}&perPage=${perPage}`);
-    }
+    router.push(`/search?keyword=${keyword}&pageSize=${pageSize}`);
   };
 
   return (
@@ -49,29 +45,27 @@ export default function Home() {
           fullWidth
           sx={sx.textfieldKeyword}
           onChange={(e) => setKeyword(e.target.value)}
-          error={isSubmitted && !keyword}
-          helperText={isSubmitted && !keyword && 'Search keyword is required!'}
         />
         <Box sx={sx.topLine} />
         <Typography component="h5" sx={sx.titleResults}>
           # Of Results Per Page
         </Typography>
-        <Box sx={sx.perPage}>
-          <Typography component="h3" sx={sx.perPageValue}>
-            {perPage}
+        <Box sx={sx.pageSize}>
+          <Typography component="h3" sx={sx.pageSizeValue}>
+            {pageSize}
           </Typography>
-          <Typography sx={sx.perPageResults}>results</Typography>
+          <Typography sx={sx.pageSizeLabel}>results</Typography>
         </Box>
         <Box>
           <Slider
-            sx={sx.slider(perPages.findIndex((e) => e === perPage))}
+            sx={sx.slider(pageSizes.findIndex((e) => e === pageSize))}
             aria-label="Per Page"
-            defaultValue={defaultPerPagesIndex}
+            defaultValue={defaultpageSizesIndex}
             min={0}
             step={1}
-            max={perPages.length - 1}
-            onChange={(e, newValue) => setPerPage(perPages[newValue as number])}
-            marks={perPages.map((e, i) => ({ value: i, label: e }))}
+            max={pageSizes.length - 1}
+            onChange={(e, newValue) => setpageSize(pageSizes[newValue as number])}
+            marks={pageSizes.map((e, i) => ({ value: i, label: e }))}
           />
         </Box>
         <Box sx={sx.bottomLine} />
