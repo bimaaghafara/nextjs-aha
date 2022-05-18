@@ -5,20 +5,46 @@ import { useRouter } from 'next/router';
 import { Styles as sx } from './Styles';
 import PageLayout from 'src/components/PageLayout';
 import Box from '@mui/material/Box';
+import LoadingButton from '@mui/lab/LoadingButton';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 // services
-import { useGetUsers } from './Services';
+import { useGetInfiniteUsers } from './Services';
 
 export default function Search() {
   const router = useRouter();
-  const { data, isLoading, error } = useGetUsers(router.query, router.isReady);
+  const { data, error, isLoading, isFetchingNextPage, fetchNextPage, hasNextPage } =
+    useGetInfiniteUsers(router.query, router.isReady);
 
   function renderContent() {
     if (error) return 'Error';
     if (isLoading || !data) return 'Loading...';
-    return JSON.stringify(data, null, 4);
+    return (
+      <>
+        <Grid container spacing={2}>
+          {data.pages.map((page) =>
+            page.response.data.map((user) => (
+              <Grid key={user.id} item xs={12} sm={4}>
+                {user.name}
+              </Grid>
+            ))
+          )}
+        </Grid>
+        <LoadingButton
+          onClick={() => {
+            if (hasNextPage) fetchNextPage();
+          }}
+          loading={isFetchingNextPage}
+          loadingPosition="end"
+          variant="outlined"
+          sx={sx.buttonMore}
+        >
+          {hasNextPage ? 'MORE' : 'Nothing more to load'}
+        </LoadingButton>
+      </>
+    );
   }
 
   return (
