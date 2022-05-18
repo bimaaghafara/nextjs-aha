@@ -28,7 +28,7 @@ export default function Search() {
           {Array(pageSize > 15 ? 15 : pageSize)
             .fill(1)
             .map((e, i) => (
-              <Grid key={e * i} item xs={12} sm={4}>
+              <Grid key={e * i} item xs={12} sm={6} md={4}>
                 <Skeleton sx={sx.skeletonImg} />
                 <Skeleton sx={sx.skeletonTitle} />
                 <Skeleton sx={sx.skeletonText} />
@@ -41,7 +41,7 @@ export default function Search() {
         <Grid container spacing={2}>
           {data.pages.map((page) =>
             page.response.data.map((user) => (
-              <Grid key={user.id} item xs={12} sm={4}>
+              <Grid key={user.id} item xs={12} sm={6} md={4}>
                 {user.name}
               </Grid>
             ))
@@ -64,7 +64,7 @@ export default function Search() {
 
   return (
     <PageLayout activeMenu="home" withNotificationMenus={['tags']}>
-      <Box sx={{ color: '#fff' }}>
+      <Box sx={sx.root}>
         <Box sx={sx.topSection}>
           <Box sx={sx.backToHome} onClick={() => router.push('/')}>
             <ChevronLeftIcon />

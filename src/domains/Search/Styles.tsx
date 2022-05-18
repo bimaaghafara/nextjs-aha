@@ -31,6 +31,9 @@ export const Styles = SxObject({
     marginBottom: '2px',
     width: '45%'
   },
+  root: {
+    color: '#fff'
+  },
   topSection: {
     marginTop: '20px',
     marginBottom: '24px',
