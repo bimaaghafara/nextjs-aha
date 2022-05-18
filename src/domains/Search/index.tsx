@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 // styles & components
 import { Styles as sx } from './Styles';
 import PageLayout from 'src/components/PageLayout';
+import FollowersFollowing from 'src/components/FollowersFollowing';
 import Box from '@mui/material/Box';
 import LoadingButton from '@mui/lab/LoadingButton';
 import Grid from '@mui/material/Grid';
@@ -63,7 +64,11 @@ export default function Search() {
   }
 
   return (
-    <PageLayout activeMenu="home" withNotificationMenus={['tags']}>
+    <PageLayout
+      activeMenu="home"
+      withNotificationMenus={['tags']}
+      sideContent={<FollowersFollowing />}
+    >
       <Box sx={sx.root}>
         <Box sx={sx.topSection}>
           <Box sx={sx.backToHome} onClick={() => router.push('/')}>

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 // styles & component
 import { Styles as sx } from './Styles';
 import PageLayout from 'src/components/PageLayout';
+import FollowersFollowing from 'src/components/FollowersFollowing';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
@@ -22,7 +23,12 @@ export default function Home() {
   };
 
   return (
-    <PageLayout activeMenu="home" withNotificationMenus={['tags']} isBottomNav>
+    <PageLayout
+      activeMenu="home"
+      withNotificationMenus={['tags']}
+      isBottomNav
+      sideContent={<FollowersFollowing />}
+    >
       <Box sx={sx.root}>
         <Typography component="h5" sx={sx.titleSearch}>
           Search

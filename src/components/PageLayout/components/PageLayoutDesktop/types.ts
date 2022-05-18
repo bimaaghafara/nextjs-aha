@@ -1,5 +1,6 @@
 export type PageLayoutDesktopProps = {
   children: React.ReactNode;
+  sideContent?: React.ReactNode;
   activeMenu: string;
   withNotificationMenus?: [string?];
 };

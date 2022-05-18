@@ -17,6 +17,7 @@ import { PageLayoutDesktopProps, Menu, Menus } from './types';
 
 export default function PageLayoutDesktop({
   children,
+  sideContent,
   activeMenu,
   withNotificationMenus = []
 }: PageLayoutDesktopProps) {
@@ -32,6 +33,21 @@ export default function PageLayoutDesktop({
     { key: 'home', label: 'Home', url: '/' },
     { key: 'tags', label: 'Tags', url: 'tags' }
   ];
+
+  const renderContent = () => {
+    if (sideContent)
+      return (
+        <Box sx={{ display: 'flex', flexGrow: 1 }}>
+          <Box sx={{ display: 'flex', flexBasis: `${(100 * 985) / (985 + 375)}%` }}>
+            <Box sx={sx.content}>{children}</Box>
+          </Box>
+          <Box sx={{ display: 'flex', flexBasis: `${(100 * 375) / (985 + 375)}%` }}>
+            <Box sx={{ color: '#fff' }}>{sideContent}</Box>
+          </Box>
+        </Box>
+      );
+    return <Box sx={sx.content}>{children}</Box>;
+  };
 
   return (
     <Box sx={sx.root}>
@@ -58,7 +74,7 @@ export default function PageLayoutDesktop({
           ))}
         </List>
       </Drawer>
-      <Box sx={sx.content}>{children}</Box>
+      {renderContent()}
     </Box>
   );
 }

@@ -13,6 +13,7 @@ import { MOBILE_WIDTH, DESKTOP_WIDTH } from 'src/constants/Styles';
 
 export default function PageLayout({
   children,
+  sideContent,
   activeMenu,
   withNotificationMenus = [],
   isBottomNav
@@ -32,6 +33,7 @@ export default function PageLayout({
 
   const pageLayoutDesktopProps = {
     children,
+    sideContent,
     activeMenu,
     withNotificationMenus
   };
