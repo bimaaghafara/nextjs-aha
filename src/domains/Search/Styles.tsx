@@ -42,6 +42,42 @@ export const Styles = SxObject({
       marginLeft: '-50px'
     }
   },
+  usersContainer: {
+    marginLeft: '-34px',
+    width: 'calc(100% + 34px)'
+  },
+  userContainer: {
+    paddingLeft: '34px !important'
+  },
+  userImg: (url) => ({
+    height: 0,
+    paddingTop: 'calc(100% * 222.67 / 335)',
+    background: `url(${url}) no-repeat center center`,
+    backgroundColor: '#333',
+    backgroundSize: 'cover',
+    [IS_DESKTOP]: {
+      paddingTop: 'calc(100% * 146 / 219)'
+    }
+  }),
+  userName: {
+    fontSize: '14.9px',
+    lineHeight: '22px',
+    letterSpacing: '0.14px',
+    marginTop: '20.33px',
+    [IS_DESKTOP]: {
+      marginTop: '12px'
+    }
+  },
+  userUsername: {
+    color: '#B2B2B2',
+    fontSize: '11.17px',
+    lineHeight: '150%',
+    letterSpacing: '0.37px',
+    marginBottom: '24px',
+    [IS_DESKTOP]: {
+      marginBottom: '34px'
+    }
+  },
   buttonMore: {
     width: '100%',
     height: '40px',
@@ -50,7 +86,7 @@ export const Styles = SxObject({
     fontWeight: 700,
     border: '1px solid #121212',
     color: '#121212',
-    marginTop: '39px',
+    marginTop: '5px',
     marginBottom: '24px',
     '&:hover': {
       color: '#fff !important',

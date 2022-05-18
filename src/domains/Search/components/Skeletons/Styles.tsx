@@ -3,32 +3,42 @@ import { IS_DESKTOP } from 'src/constants/Styles';
 
 export const Styles = SxObject({
   skeletonsContainer: {
-    marginTop: '-31px'
+    marginLeft: '-34px',
+    width: 'calc(100% + 34px)'
+  },
+  skeletonContainer: {
+    paddingLeft: '34px !important'
   },
   skeletonImg: {
     background: '#333',
     height: 0,
-    marginTop: '15px',
     paddingTop: 'calc(100% * 222.67 / 335)',
     transform: 'none',
     [IS_DESKTOP]: {
       paddingTop: 'calc(100% * 146 / 219)'
     }
   },
-  skeletonTitle: {
+  skeletonName: {
     background: '#333',
-    height: '12px',
+    height: '14px',
     transform: 'none',
-    marginTop: '6.5px',
-    marginBottom: '3.5px',
-    width: '60%'
+    marginTop: '24.33px',
+    marginBottom: '4px',
+    width: '60%',
+    [IS_DESKTOP]: {
+      marginTop: '18px',
+      marginBottom: '2px'
+    }
   },
-  skeletonText: {
+  skeletonUsername: {
     background: '#333',
-    height: '10px',
+    height: '8px',
     transform: 'none',
-    marginTop: '5px',
-    marginBottom: '2px',
-    width: '45%'
+    marginTop: '8.75px',
+    width: '45%',
+    marginBottom: '12px',
+    [IS_DESKTOP]: {
+      marginBottom: '20px'
+    }
   }
 });

@@ -26,11 +26,13 @@ export default function Search() {
     if (isLoading || !data) return <Skeletons pageSize={pageSize} />;
     return (
       <>
-        <Grid container spacing={2}>
+        <Grid container sx={sx.usersContainer}>
           {data.pages.map((page) =>
             page.response.data.map((user) => (
-              <Grid key={user.id} item xs={12} sm={6} md={4}>
-                {user.name}
+              <Grid key={user.id} item xs={12} sm={6} md={4} sx={sx.userContainer}>
+                <Box sx={sx.userImg(user.avater)} />
+                <Typography sx={sx.userName}>{user.name}</Typography>
+                <Typography sx={sx.userUsername}>{user.username}</Typography>
               </Grid>
             ))
           )}
