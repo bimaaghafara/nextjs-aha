@@ -3,12 +3,12 @@ import { useRouter } from 'next/router';
 
 // styles & components
 import { Styles as sx } from './Styles';
+import Skeletons from './components/Skeletons';
 import PageLayout from 'src/components/PageLayout';
 import FollowersFollowing from 'src/components/FollowersFollowing';
 import Box from '@mui/material/Box';
 import LoadingButton from '@mui/lab/LoadingButton';
 import Grid from '@mui/material/Grid';
-import Skeleton from '@mui/material/Skeleton';
 import Typography from '@mui/material/Typography';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
@@ -23,20 +23,7 @@ export default function Search() {
 
   function renderContent() {
     if (error) return 'Error';
-    if (isLoading || !data)
-      return (
-        <Grid container spacing={2} sx={sx.skeletonsContainer}>
-          {Array(pageSize > 15 ? 15 : pageSize)
-            .fill(1)
-            .map((e, i) => (
-              <Grid key={e * i} item xs={12} sm={6} md={4}>
-                <Skeleton sx={sx.skeletonImg} />
-                <Skeleton sx={sx.skeletonTitle} />
-                <Skeleton sx={sx.skeletonText} />
-              </Grid>
-            ))}
-        </Grid>
-      );
+    if (isLoading || !data) return <Skeletons pageSize={pageSize} />;
     return (
       <>
         <Grid container spacing={2}>

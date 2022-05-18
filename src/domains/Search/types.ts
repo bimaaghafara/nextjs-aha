@@ -13,3 +13,7 @@ export type GetUsersResponse = {
   total: number;
   totalPages: number;
 };
+
+export type SkeletonsProps = {
+  pageSize: number;
+};
