@@ -8,14 +8,17 @@ import PageLayoutMobile from './components/PageLayoutMobile';
 // types
 import { PageLayoutProps } from './types';
 
+// constants
+import { MOBILE_WIDTH, DESKTOP_WIDTH } from 'src/constants/Styles';
+
 export default function PageLayout({
   children,
   activeMenu,
   withNotificationMenus = [],
   isBottomNav
 }: PageLayoutProps) {
-  const isMobile = useMediaQuery('(max-width:600px)');
-  const isDesktop = useMediaQuery('(min-width:601px)');
+  const isMobile = useMediaQuery(MOBILE_WIDTH);
+  const IS_DESKTOP = useMediaQuery(DESKTOP_WIDTH);
 
   const pageLayoutMobileProps = {
     children,
@@ -33,7 +36,7 @@ export default function PageLayout({
     withNotificationMenus
   };
 
-  if (isDesktop) {
+  if (IS_DESKTOP) {
     return <PageLayoutDesktop {...pageLayoutDesktopProps} />;
   }
 

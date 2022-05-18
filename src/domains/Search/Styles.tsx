@@ -1,6 +1,5 @@
 import { SxObject } from 'src/types/SxObject';
-
-const isDesktop = `@media screen and (min-width: 601px)`;
+import { IS_DESKTOP } from 'src/constants/Styles';
 
 export const Styles = SxObject({
   skeletonsContainer: {
@@ -12,7 +11,7 @@ export const Styles = SxObject({
     marginTop: '15px',
     paddingTop: 'calc(100% * 222.67 / 335)',
     transform: 'none',
-    [isDesktop]: {
+    [IS_DESKTOP]: {
       paddingTop: 'calc(100% * 146 / 219)'
     }
   },
@@ -38,7 +37,7 @@ export const Styles = SxObject({
     height: '45px',
     display: 'flex',
     alignItems: 'center',
-    [isDesktop]: {
+    [IS_DESKTOP]: {
       paddingLeft: '20px',
       marginTop: '92px'
     }
@@ -53,19 +52,19 @@ export const Styles = SxObject({
       fontSize: '45px',
       marginLeft: '-16px',
       display: 'none',
-      [isDesktop]: {
+      [IS_DESKTOP]: {
         display: 'block'
       }
     },
     '& p': {
       fontSize: '24px',
       letterSpacing: '0.25px',
-      [isDesktop]: {
+      [IS_DESKTOP]: {
         fontSize: '30px',
         paddingLeft: '9px'
       }
     },
-    [isDesktop]: {
+    [IS_DESKTOP]: {
       marginLeft: '-50px'
     }
   },
@@ -94,7 +93,7 @@ export const Styles = SxObject({
     '&..Mui-disabled': {
       color: '#121212'
     },
-    [isDesktop]: {
+    [IS_DESKTOP]: {
       width: '343px'
     }
   }

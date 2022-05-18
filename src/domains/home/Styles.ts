@@ -1,10 +1,9 @@
 import { SxObject } from 'src/types/SxObject';
-
-const isDesktop = `@media screen and (min-width: 601px)`;
+import { IS_DESKTOP } from 'src/constants/Styles';
 
 export const Styles = SxObject({
   root: {
-    [isDesktop]: {
+    [IS_DESKTOP]: {
       marginTop: '54px'
     }
   },
@@ -30,7 +29,7 @@ export const Styles = SxObject({
         border: '3px solid #FF9B33'
       }
     },
-    [isDesktop]: {
+    [IS_DESKTOP]: {
       marginTop: '20px'
     }
   },
@@ -40,7 +39,7 @@ export const Styles = SxObject({
     opacity: '0.1',
     border: '1px solid #FFFFFF',
     display: 'none',
-    [isDesktop]: {
+    [IS_DESKTOP]: {
       display: 'block'
     }
   },
@@ -55,7 +54,7 @@ export const Styles = SxObject({
     alignItems: 'flex-end',
     marginTop: '16px',
     color: '#fff',
-    [isDesktop]: {
+    [IS_DESKTOP]: {
       marginTop: '20px'
     }
   },
@@ -135,7 +134,7 @@ export const Styles = SxObject({
     marginBottom: '210px',
     opacity: '0.1',
     border: '1px solid #FFFFFF',
-    [isDesktop]: {
+    [IS_DESKTOP]: {
       marginTop: '30px',
       marginBottom: '2px'
     }
@@ -157,7 +156,7 @@ export const Styles = SxObject({
       border: '1px solid #fff',
       boxShadow: 'none'
     },
-    [isDesktop]: {
+    [IS_DESKTOP]: {
       width: '343px',
       bottom: 0,
       marginBottom: '87px'
