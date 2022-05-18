@@ -4,24 +4,40 @@ const isDesktop = `@media screen and (min-width: 601px)`;
 
 export const Styles = SxObject({
   topSection: {
-    marginTop: '92px',
+    marginTop: '20px',
+    marginBottom: '24px',
     height: '45px',
     display: 'flex',
     alignItems: 'center',
-    paddingLeft: '20px'
+    [isDesktop]: {
+      paddingLeft: '20px',
+      marginTop: '92px'
+    }
   },
   backToHome: {
+    padding: 0,
     display: 'flex',
     alignItems: 'center',
     color: '#fff',
     cursor: 'pointer',
     '& svg': {
       fontSize: '45px',
-      marginLeft: '-9px'
+      marginLeft: '-16px',
+      display: 'none',
+      [isDesktop]: {
+        display: 'block'
+      }
     },
     '& p': {
-      fontSize: '30px',
-      letterSpacing: '0.25px'
+      fontSize: '24px',
+      letterSpacing: '0.25px',
+      [isDesktop]: {
+        fontSize: '30px',
+        paddingLeft: '9px'
+      }
+    },
+    [isDesktop]: {
+      marginLeft: '-50px'
     }
   },
   buttonMore: {
