@@ -13,7 +13,15 @@ export default function Tags() {
           .fill(1)
           .map((e, i) => (
             <Box key={e * i} sx={sx.tagContainer}>
-              <Box sx={sx.tag}>123</Box>
+              <Box sx={sx.tag}>
+                <Box sx={sx.tagBoxContainer}>
+                  <Box sx={sx.tagBox}>
+                    <Typography>Cool</Typography>
+                  </Box>
+                </Box>
+                <Typography sx={sx.tagName}>Cool</Typography>
+                <Typography sx={sx.tagCount}>123 {i < 5 ? 'Results' : 'Questions'}</Typography>
+              </Box>
             </Box>
           ))}
       </Box>
