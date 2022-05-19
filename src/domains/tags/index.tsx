@@ -2,6 +2,7 @@ import PageLayout from 'src/components/PageLayout';
 
 // styles & components
 import { Styles as sx } from './Styles';
+import Skeletons from './components/Skeletons';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
@@ -13,7 +14,7 @@ export default function Tags() {
 
   function renderContent() {
     if (error) return 'Error!';
-    if (isLoading || !data) return 'Loading...';
+    if (isLoading || !data) return <Skeletons />;
     return (
       <Box sx={sx.tagsContainer}>
         {data.map((tag, i) => (

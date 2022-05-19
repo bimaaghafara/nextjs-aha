@@ -31,7 +31,7 @@ export const Styles = SxObject({
     flexGrow: 1,
     flexWrap: 'wrap',
     marginLeft: '-24px',
-    width: 'calc(100% + 24px'
+    width: 'calc(100% + 24px)'
   },
   tagContainer: {
     display: 'flex',
