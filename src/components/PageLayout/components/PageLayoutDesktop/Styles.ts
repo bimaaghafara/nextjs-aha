@@ -79,12 +79,14 @@ export const Styles = SxObject({
     justifyContent: 'center',
     overflow: 'auto',
     '& > *': {
-      width: `${(100 * 846) / 1360}%`
+      width: `${(100 * 846) / 1360}%`,
+      minWidth: '846px'
     }
   },
   contentWithSide: {
     '& > *': {
-      width: `${(100 * 725) / 985}%`
+      width: `${(100 * 725) / 985}%`,
+      minWidth: '725px'
     }
   }
 });

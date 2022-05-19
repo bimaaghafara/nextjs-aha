@@ -38,12 +38,7 @@ export const Styles = SxObject({
     flexBasis: {
       xs: `calc(100% / 2)`,
       sm: `calc(100% / 3)`,
-      md: `calc(100% / 4)`
-    },
-    '@media screen and (min-width: 1440px)': {
-      flexBasis: {
-        md: `calc(100% / 5)`
-      }
+      md: `calc(100% / 5)`
     },
     paddingLeft: '24px',
     paddingTop: '24px'
