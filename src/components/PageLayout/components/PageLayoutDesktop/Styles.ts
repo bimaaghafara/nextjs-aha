@@ -79,6 +79,11 @@ export const Styles = SxObject({
     justifyContent: 'center',
     overflow: 'auto',
     '& > *': {
+      width: `${(100 * 846) / 1360}%`
+    }
+  },
+  contentWithSide: {
+    '& > *': {
       width: `${(100 * 725) / 985}%`
     }
   }

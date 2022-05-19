@@ -39,7 +39,7 @@ export default function PageLayoutDesktop({
       return (
         <Box sx={{ display: 'flex', flexGrow: 1 }}>
           <Box sx={{ display: 'flex', flexBasis: `${(100 * 985) / (985 + 375)}%` }}>
-            <Box sx={sx.content}>{children}</Box>
+            <Box sx={{ ...sx.content, ...sx.contentWithSide }}>{children}</Box>
           </Box>
           <Box sx={{ display: 'flex', flexBasis: `${(100 * 375) / (985 + 375)}%` }}>
             <Box sx={{ color: '#fff' }}>{sideContent}</Box>
