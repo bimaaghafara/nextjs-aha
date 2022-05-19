@@ -7,7 +7,17 @@ import Typography from '@mui/material/Typography';
 
 export default function Tags() {
   function renderContent() {
-    return <div>content list!</div>;
+    return (
+      <Box sx={sx.tagsContainer}>
+        {Array(12)
+          .fill(1)
+          .map((e, i) => (
+            <Box key={e * i} sx={sx.tagContainer}>
+              <Box sx={sx.tag}>123</Box>
+            </Box>
+          ))}
+      </Box>
+    );
   }
 
   return (

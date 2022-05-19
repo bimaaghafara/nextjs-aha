@@ -19,5 +19,26 @@ export const Styles = SxObject({
         fontSize: '30px'
       }
     }
+  },
+  tagsContainer: {
+    display: 'flex',
+    flexGrow: 1,
+    flexWrap: 'wrap',
+    marginLeft: '-24px',
+    width: 'calc(100% + 24px'
+  },
+  tagContainer: {
+    display: 'flex',
+    flexBasis: {
+      xs: `calc(100% / 2)`,
+      sm: `calc(100% / 3)`,
+      md: `calc(100% / 5)`
+    },
+    paddingLeft: '24px',
+    paddingTop: '24px'
+  },
+  tag: {
+    background: '#eee',
+    width: '100%'
   }
 });
