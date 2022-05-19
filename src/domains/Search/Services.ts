@@ -14,6 +14,7 @@ export const useGetInfiniteUsers = (variables: ParsedUrlQuery, enabled: boolean)
     const { page, totalPages } = data;
     return { response: data, nextPage: page < totalPages ? page + 1 : null };
   };
+
   return useInfiniteQuery(['getInfinityUsers', variables], getInfiniteUsers, {
     enabled,
     getNextPageParam: (lastPage) => lastPage.nextPage

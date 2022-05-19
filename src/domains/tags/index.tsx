@@ -5,25 +5,32 @@ import { Styles as sx } from './Styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
+// services
+import { useGetTags } from './Services';
+
 export default function Tags() {
+  const { data, error, isLoading } = useGetTags();
+
   function renderContent() {
+    if (error) return 'Error!';
+    if (isLoading || !data) return 'Loading...';
     return (
       <Box sx={sx.tagsContainer}>
-        {Array(12)
-          .fill(1)
-          .map((e, i) => (
-            <Box key={e * i} sx={sx.tagContainer}>
-              <Box sx={sx.tag}>
-                <Box sx={sx.tagBoxContainer}>
-                  <Box sx={sx.tagBox}>
-                    <Typography>Cool</Typography>
-                  </Box>
+        {data.map((tag, i) => (
+          <Box key={tag.id} sx={sx.tagContainer}>
+            <Box sx={sx.tag}>
+              <Box sx={sx.tagBoxContainer}>
+                <Box sx={sx.tagBox}>
+                  <Typography>{tag.name}</Typography>
                 </Box>
-                <Typography sx={sx.tagName}>Cool</Typography>
-                <Typography sx={sx.tagCount}>123 {i < 5 ? 'Results' : 'Questions'}</Typography>
               </Box>
+              <Typography sx={sx.tagName}>{tag.name}</Typography>
+              <Typography sx={sx.tagCount}>
+                {tag.count} {i < 5 ? 'Results' : 'Questions'}
+              </Typography>
             </Box>
-          ))}
+          </Box>
+        ))}
       </Box>
     );
   }

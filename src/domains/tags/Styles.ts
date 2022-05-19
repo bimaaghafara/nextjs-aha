@@ -73,7 +73,11 @@ export const Styles = SxObject({
     fontSize: '14.9px',
     lineHeight: '22px',
     marginTop: '10px',
-    letterSpacing: '0.14px'
+    letterSpacing: '0.14px',
+    whiteSpace: 'nowrap',
+    maxWidth: '150px',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   },
   tagCount: {
     fontSize: '11.7px',
