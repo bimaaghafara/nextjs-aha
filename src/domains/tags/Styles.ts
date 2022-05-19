@@ -12,19 +12,21 @@ export const Styles = SxObject({
   },
   topSection: {
     marginTop: '20px',
+    marginBottom: '24px',
     '& > *': {
       lineHeight: '150%',
-      fontSize: '24px',
+      fontSize: '24px !important',
       letterSpacing: '0.25px'
     },
     [IS_DESKTOP]: {
       marginTop: '80px',
       '& > *': {
-        fontSize: '30px'
+        fontSize: '30px !important'
       }
     }
   },
   tagsContainer: {
+    marginTop: '-24px',
     display: 'flex',
     flexGrow: 1,
     flexWrap: 'wrap',
@@ -36,7 +38,12 @@ export const Styles = SxObject({
     flexBasis: {
       xs: `calc(100% / 2)`,
       sm: `calc(100% / 3)`,
-      md: `calc(100% / 5)`
+      md: `calc(100% / 4)`
+    },
+    '@media screen and (min-width: 1440px)': {
+      flexBasis: {
+        md: `calc(100% / 5)`
+      }
     },
     paddingLeft: '24px',
     paddingTop: '24px'

@@ -39,7 +39,7 @@ export default function Tags() {
     <PageLayout activeMenu="tags">
       <Box sx={sx.root}>
         <Box sx={sx.topSection}>
-          <Typography>Results</Typography>
+          <Typography>Tags</Typography>
         </Box>
         {renderContent()}
       </Box>
