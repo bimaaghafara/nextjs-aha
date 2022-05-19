@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-// styles & component
+// styles & components
 import { Styles as sx } from './Styles';
 import PageLayout from 'src/components/PageLayout';
 import FollowersFollowing from 'src/components/FollowersFollowing';

@@ -71,6 +71,19 @@ export const Styles = SxObject({
       letterSpacing: '0.4px'
     }
   },
+  contentRoot: {
+    display: 'flex',
+    flexGrow: 1
+  },
+  contentWrapper: {
+    display: 'flex',
+    flexBasis: `${(100 * 985) / (985 + 375)}%`
+  },
+  sideContentWrapper: {
+    display: 'flex',
+    flexBasis: `${(100 * 375) / (985 + 375)}%`,
+    background: '#1b1b1b'
+  },
   content: {
     flexGrow: 1,
     background: '#181818',
@@ -88,5 +101,8 @@ export const Styles = SxObject({
       width: `${(100 * 725) / 985}%`,
       minWidth: '725px'
     }
+  },
+  sideContent: {
+    width: '100%'
   }
 });

@@ -37,12 +37,12 @@ export default function PageLayoutDesktop({
   const renderContent = () => {
     if (sideContent)
       return (
-        <Box sx={{ display: 'flex', flexGrow: 1 }}>
-          <Box sx={{ display: 'flex', flexBasis: `${(100 * 985) / (985 + 375)}%` }}>
+        <Box sx={sx.contentRoot}>
+          <Box sx={sx.contentWrapper}>
             <Box sx={[sx.content, sx.contentWithSide]}>{children}</Box>
           </Box>
-          <Box sx={{ display: 'flex', flexBasis: `${(100 * 375) / (985 + 375)}%` }}>
-            <Box sx={{ color: '#fff', width: '100%' }}>{sideContent}</Box>
+          <Box sx={sx.sideContentWrapper}>
+            <Box sx={sx.sideContent}>{sideContent}</Box>
           </Box>
         </Box>
       );
