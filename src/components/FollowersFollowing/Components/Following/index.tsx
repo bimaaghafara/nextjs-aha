@@ -1,3 +1,7 @@
+// styles & components
+import Users from '../Users';
+
+// services
 import { useGetFollowing } from '../../Services';
 
 export default function Following() {
@@ -6,5 +10,5 @@ export default function Following() {
 
   if (error) return <>Error!</>;
   if (isLoading || !data) return <>Loading</>;
-  return <div>Following!!!</div>;
+  return <Users users={data.data} />;
 }
