@@ -5,7 +5,7 @@ export const Styles = SxObject({
     width: '100%'
   },
   tabs: {
-    marginTop: '12px',
+    marginTop: '17px',
     marginBottom: '35px',
     '& .MuiTab-root': {
       color: '#929292',
@@ -13,10 +13,10 @@ export const Styles = SxObject({
       textTransform: 'none',
       fontWeight: 700,
       fontSize: '16px',
-      lineHeight: '150%',
+      lineHeight: '20px',
       letterSpacing: '0.15px',
-      paddingTop: '12.5px',
-      paddingBottom: '6.5px'
+      paddingTop: '15px',
+      paddingBottom: '11px'
     },
     '& .MuiTab-root.Mui-selected': {
       color: '#fff'
