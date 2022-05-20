@@ -13,7 +13,7 @@ export default function Tags() {
   const { data, error, isLoading } = useGetTags();
 
   function renderContent() {
-    if (error) return 'Error!';
+    if (error) return <>Error!</>;
     if (isLoading || !data) return <Skeletons />;
     return (
       <Box sx={sx.tagsContainer}>

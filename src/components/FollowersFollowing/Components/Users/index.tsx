@@ -31,7 +31,7 @@ export default function Users({ users, type }: UsersProps) {
           }
         >
           <ListItemAvatar>
-            <Avatar variant="rounded" sx={{ border: '1px solid #F8F8F8', borderRadius: '5px' }}>
+            <Avatar variant="rounded" sx={sx.avatar}>
               <ImageIcon />
               <Box sx={sx.avatarImage(user.avater)} />
             </Avatar>

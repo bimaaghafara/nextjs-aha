@@ -21,7 +21,7 @@ export default function Search() {
     useGetInfiniteUsers(router.query, router.isReady);
 
   function renderContent() {
-    if (error) return 'Error!';
+    if (error) return <>Error!</>;
     if (isLoading || !data) return <Skeletons pageSize={pageSize} />;
     return (
       <>

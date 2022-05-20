@@ -10,6 +10,10 @@ export const Styles = SxObject({
     paddingBottom: 0,
     marginBottom: '16px'
   },
+  avatar: {
+    border: '1px solid #F8F8F8',
+    borderRadius: '5px'
+  },
   avatarImage: (url) => ({
     background: `url(${url}) no-repeat center center`,
     backgroundSize: 'cover',
@@ -49,13 +53,23 @@ export const Styles = SxObject({
     textTransform: 'capitalize',
     color: '#fff',
     minWidth: 'unset',
-    width: '60px'
+    width: '60px',
+    '&:hover': {
+      color: '#fff',
+      border: '1px solid #fff',
+      boxShadow: 'none'
+    }
   },
   rightButtonFollowing: {
     width: '76px',
     padding: '7px 7.5px',
     color: '#121212',
     lineHeight: '12px',
-    background: '#fff'
+    background: '#fff',
+    '&:hover': {
+      color: '#121212',
+      background: '#fff',
+      boxShadow: 'none'
+    }
   }
 });
