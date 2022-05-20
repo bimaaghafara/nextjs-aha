@@ -1,11 +1,44 @@
+// styles & components
+import { Styles as sx } from './Styles';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import ImageIcon from '@mui/icons-material/Image';
+
+// types
 import { UsersProps } from './types';
 
-export default function Users({ users }: UsersProps) {
+export default function Users({ users, type }: UsersProps) {
+  const isFollowingButton = (i: number) => type === 'following' || [2, 5].includes(i);
+
   return (
-    <>
-      {users.map((user) => (
-        <div key={user.id}>{user.name}</div>
+    <List sx={sx.root}>
+      {users.map((user, i) => (
+        <ListItem
+          key={user.id}
+          sx={sx.listItem}
+          secondaryAction={
+            <Button
+              sx={[sx.rightButton, isFollowingButton(i) && sx.rightButtonFollowing]}
+              variant="outlined"
+            >
+              {isFollowingButton(i) ? 'following' : 'follow'}
+            </Button>
+          }
+        >
+          <ListItemAvatar>
+            <Avatar variant="rounded" sx={{ border: '1px solid #F8F8F8', borderRadius: '5px' }}>
+              <ImageIcon />
+              <Box sx={sx.avatarImage(user.avater)} />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText sx={sx.text} primary={user.name} secondary={`@${user.username}`} />
+        </ListItem>
       ))}
-    </>
+    </List>
   );
 }

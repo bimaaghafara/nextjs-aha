@@ -81,6 +81,7 @@ export const Styles = SxObject({
   },
   sideContentWrapper: {
     display: 'flex',
+    maxWidth: `${(100 * 375) / (985 + 375)}%`,
     flexBasis: `${(100 * 375) / (985 + 375)}%`,
     background: '#1b1b1b'
   },

@@ -6,7 +6,7 @@ export const Styles = SxObject({
   },
   tabs: {
     marginTop: '17px',
-    marginBottom: '35px',
+    marginBottom: '32px',
     '& .MuiTab-root': {
       color: '#929292',
       borderBottom: '2px solid #1f1f1f',

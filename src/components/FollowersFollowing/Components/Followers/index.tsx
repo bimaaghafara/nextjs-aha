@@ -10,5 +10,5 @@ export default function Followers() {
 
   if (error) return <>Error!</>;
   if (isLoading || !data) return <>Loading</>;
-  return <Users users={data.data} />;
+  return <Users type="followers" users={data.data} />;
 }
