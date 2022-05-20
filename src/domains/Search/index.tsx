@@ -19,6 +19,7 @@ export default function Search() {
   const pageSize = Number(router.query.pageSize || 0);
   const { data, error, isLoading, isFetchingNextPage, fetchNextPage, hasNextPage } =
     useGetInfiniteUsers(router.query, router.isReady);
+  const noResults = !data?.pages?.[0]?.response?.data?.length;
 
   function renderContent() {
     if (error) return <>Error!</>;
@@ -36,17 +37,20 @@ export default function Search() {
             ))
           )}
         </Grid>
-        <LoadingButton
-          onClick={() => fetchNextPage()}
-          loading={isFetchingNextPage}
-          loadingPosition="end"
-          endIcon={<></>}
-          variant="outlined"
-          sx={sx.buttonMore}
-          disabled={!hasNextPage}
-        >
-          {hasNextPage ? 'MORE' : 'Nothing more to load'}
-        </LoadingButton>
+        {noResults && <Box mb={1}>No results found.</Box>}
+        {!noResults && (
+          <LoadingButton
+            onClick={() => fetchNextPage()}
+            loading={isFetchingNextPage}
+            loadingPosition="end"
+            endIcon={<></>}
+            variant="outlined"
+            sx={sx.buttonMore}
+            disabled={!hasNextPage}
+          >
+            {hasNextPage ? 'MORE' : 'Nothing more to load'}
+          </LoadingButton>
+        )}
       </>
     );
   }
