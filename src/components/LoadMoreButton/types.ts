@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { SystemStyleObject } from '@mui/system/styleFunctionSx';
 import { Theme } from '@mui/material/styles';
 

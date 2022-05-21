@@ -1,5 +1,6 @@
 // styles & components
 import { Styles as sx } from './Styles';
+import LoadMoreButton from 'src/components/LoadMoreButton';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
@@ -39,6 +40,9 @@ export default function Users({ users, type }: UsersProps) {
           <ListItemText sx={sx.text} primary={user.name} secondary={`@${user.username}`} />
         </ListItem>
       ))}
+      <ListItem sx={sx.listItem}>
+        <LoadMoreButton onClick={() => {}} loading={false} label="More" />
+      </ListItem>
     </List>
   );
 }
