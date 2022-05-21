@@ -29,7 +29,7 @@ export const Styles = SxObject({
   listItemButton: {
     justifyContent: 'center',
     paddingTop: 0,
-    marginBottom: '42px',
+    marginBottom: '14px',
     '& svg path': {
       fill: '#8A8A8F'
     },
@@ -50,14 +50,15 @@ export const Styles = SxObject({
       height: '7px',
       position: 'absolute',
       top: '-4px',
-      marginRight: '-25px',
+      marginRight: '-27.5px',
       content: '""'
     }
   },
   listItemIcon: {
     flexDirection: 'column',
     alignItems: 'center',
-    color: '#fff'
+    color: '#fff',
+    marginLeft: '2.5px'
   },
   menuIcon: {
     height: '24px'
@@ -65,10 +66,10 @@ export const Styles = SxObject({
   listItemText: {
     margin: 0,
     '& span': {
-      marginTop: '1px',
       fontSize: '12px',
       lineHeight: '150%',
-      letterSpacing: '0.4px'
+      letterSpacing: '0.355px',
+      paddingLeft: '0.5px'
     }
   },
   contentRoot: {
