@@ -6,7 +6,7 @@ import { GetUsersResponse } from 'src/domains/Search/types';
 
 export const useGetFollowers = () => {
   const getFollowers = async () => {
-    const { data } = await http.get<GetUsersResponse>('/users/all?page=1&pageSize=10');
+    const { data } = await http.get<GetUsersResponse>('/users/all?page=1&pageSize=15');
     return data;
   };
 
@@ -15,7 +15,7 @@ export const useGetFollowers = () => {
 
 export const useGetFollowing = () => {
   const getFollowing = async () => {
-    const { data } = await http.get<GetUsersResponse>('/users/friends?page=1&pageSize=10');
+    const { data } = await http.get<GetUsersResponse>('/users/friends?page=1&pageSize=15');
     return data;
   };
 

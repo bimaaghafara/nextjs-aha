@@ -5,8 +5,8 @@ import { Styles as sx } from './Styles';
 import Skeletons from './components/Skeletons';
 import PageLayout from 'src/components/PageLayout';
 import FollowersFollowing from 'src/components/FollowersFollowing';
+import LoadMoreButton from 'src/components/LoadMoreButton';
 import Box from '@mui/material/Box';
-import LoadingButton from '@mui/lab/LoadingButton';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -39,17 +39,14 @@ export default function Search() {
         </Grid>
         {noResults && <Box mb={1}>No results found.</Box>}
         {!noResults && (
-          <LoadingButton
+          <LoadMoreButton
             onClick={() => fetchNextPage()}
             loading={isFetchingNextPage}
             loadingPosition="end"
-            endIcon={<></>}
-            variant="outlined"
             sx={sx.buttonMore}
             disabled={!hasNextPage}
-          >
-            {hasNextPage ? 'MORE' : 'Nothing more to load'}
-          </LoadingButton>
+            label={hasNextPage ? 'MORE' : 'Nothing more to load'}
+          />
         )}
       </>
     );

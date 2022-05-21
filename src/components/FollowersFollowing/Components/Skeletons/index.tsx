@@ -10,7 +10,7 @@ import Avatar from '@mui/material/Avatar';
 export default function Skeletons() {
   return (
     <List sx={sx.skeletonsContainer}>
-      {Array(10)
+      {Array(15)
         .fill(1)
         .map((e, i) => (
           <ListItem key={e * i} sx={sx.listItem} secondaryAction={<Skeleton />}>
