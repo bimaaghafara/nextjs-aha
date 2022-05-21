@@ -18,10 +18,13 @@ export const Styles = SxObject({
     cursor: 'pointer',
     '& svg': {
       fontSize: '42px',
-      marginLeft: '-9px'
+      marginLeft: '-9px',
+      marginBottom: '-2px'
     },
     '& p': {
-      fontSize: '24px'
+      fontSize: '24px',
+      letterSpacing: '0.0375px',
+      paddingLeft: '5px'
     }
   },
   content: {

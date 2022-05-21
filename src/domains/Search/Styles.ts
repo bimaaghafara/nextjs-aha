@@ -8,12 +8,13 @@ export const Styles = SxObject({
   topSection: {
     marginTop: '20px',
     marginBottom: '24px',
-    height: '45px',
+    height: '36px',
     display: 'flex',
     alignItems: 'center',
     [IS_DESKTOP]: {
       paddingLeft: '20px',
-      marginTop: '92px'
+      marginTop: '92px',
+      height: '45px'
     }
   },
   backToHome: {
@@ -32,7 +33,7 @@ export const Styles = SxObject({
     },
     '& p': {
       fontSize: '24px',
-      letterSpacing: '0.25px',
+      letterSpacing: '0.014px',
       [IS_DESKTOP]: {
         fontSize: '30px',
         paddingLeft: '9px'
@@ -73,7 +74,7 @@ export const Styles = SxObject({
     fontSize: '11.17px',
     lineHeight: '150%',
     letterSpacing: '0.37px',
-    marginBottom: '24px',
+    marginBottom: '40px',
     [IS_DESKTOP]: {
       marginBottom: '34px'
     }
