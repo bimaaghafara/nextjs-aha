@@ -16,12 +16,14 @@ export const Styles = SxObject({
     '& > *': {
       lineHeight: '150%',
       fontSize: '24px !important',
-      letterSpacing: '0.25px'
+      letterSpacing: '0.1025px',
+      marginLeft: '-5px'
     },
     [IS_DESKTOP]: {
       marginTop: '80px',
       '& > *': {
-        fontSize: '30px !important'
+        fontSize: '30px !important',
+        marginLeft: 0
       }
     }
   },
