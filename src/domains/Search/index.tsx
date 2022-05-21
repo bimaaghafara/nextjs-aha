@@ -42,7 +42,6 @@ export default function Search() {
           <LoadMoreButton
             onClick={() => fetchNextPage()}
             loading={isFetchingNextPage}
-            loadingPosition="end"
             sx={sx.buttonMore}
             disabled={!hasNextPage}
             label={hasNextPage ? 'MORE' : 'Nothing more to load'}

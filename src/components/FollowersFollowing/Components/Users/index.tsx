@@ -13,8 +13,15 @@ import ImageIcon from '@mui/icons-material/Image';
 // types
 import { UsersProps } from './types';
 
-export default function Users({ users, type }: UsersProps) {
-  const isFollowingButton = (i: number) => type === 'following' || [2, 5].includes(i);
+export default function Users({
+  users,
+  type,
+  isFetchingNextPage,
+  fetchNextPage,
+  hasNextPage,
+  noResults
+}: UsersProps) {
+  const isFollowingButton = (i: number) => type === 'following' || [2, 5, 16, 17, 21].includes(i);
 
   return (
     <List sx={sx.root}>
@@ -41,7 +48,15 @@ export default function Users({ users, type }: UsersProps) {
         </ListItem>
       ))}
       <ListItem sx={sx.listItem}>
-        <LoadMoreButton onClick={() => {}} loading={false} label="More" />
+        {noResults && <Box mb={1}>No results found.</Box>}
+        {!noResults && (
+          <LoadMoreButton
+            onClick={() => fetchNextPage()}
+            loading={isFetchingNextPage}
+            disabled={!hasNextPage}
+            label={hasNextPage ? 'MORE' : 'Nothing more to load'}
+          />
+        )}
       </ListItem>
     </List>
   );

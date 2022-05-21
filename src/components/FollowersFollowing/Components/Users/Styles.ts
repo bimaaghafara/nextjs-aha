@@ -8,7 +8,8 @@ export const Styles = SxObject({
   listItem: {
     paddingTop: 0,
     paddingBottom: 0,
-    marginBottom: '16px'
+    marginBottom: '16px',
+    color: '#fff'
   },
   avatar: {
     border: '1px solid #F8F8F8',
