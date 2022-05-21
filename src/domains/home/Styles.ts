@@ -73,7 +73,8 @@ export const Styles = SxObject({
     color: 'transparent',
     width: '100%',
     height: '8px',
-    paddingTop: '26px',
+    paddingTop: '26px !important',
+    paddingBottom: '13px !important',
     '& .MuiSlider-mark': {
       display: 'none'
     },
@@ -105,13 +106,14 @@ export const Styles = SxObject({
       })
     },
     '& .MuiSlider-markLabel': {
+      top: '30px !important',
       opacity: 0.5,
       color: '#fff',
       fontWeight: 500,
       fontSize: '16px',
       letterSpacing: '0.15px',
       lineHeight: '24px',
-      marginTop: '11px',
+      marginTop: '8px',
       '&[data-index="0"]': {
         left: '4px !important'
       },

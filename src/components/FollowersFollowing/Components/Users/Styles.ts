@@ -56,7 +56,8 @@ export const Styles = SxObject({
     minWidth: 'unset',
     width: '60px',
     '&:hover': {
-      color: '#fff',
+      color: '#121212',
+      background: '#fff',
       border: '1px solid #fff',
       boxShadow: 'none'
     }
@@ -68,8 +69,9 @@ export const Styles = SxObject({
     lineHeight: '12px',
     background: '#fff',
     '&:hover': {
-      color: '#121212',
-      background: '#fff',
+      color: '#fff',
+      background: '#121212',
+      border: '1px solid #fff',
       boxShadow: 'none'
     }
   }
