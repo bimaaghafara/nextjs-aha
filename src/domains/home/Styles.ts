@@ -15,7 +15,10 @@ export const Styles = SxObject({
     marginTop: '16px',
     '& input': {
       color: '#fff',
-      height: '27px'
+      height: '27px',
+      padding: '16.5px 18px',
+      fontSize: '14px',
+      letterSpacing: '0.25px'
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
@@ -46,7 +49,8 @@ export const Styles = SxObject({
   titleResults: {
     color: '#fff',
     fontSize: '24px',
-    marginTop: '28px'
+    marginTop: '28px',
+    letterSpacing: '0.025px'
   },
   pageSize: {
     display: 'flex',
@@ -70,10 +74,12 @@ export const Styles = SxObject({
     paddingBottom: '4px'
   },
   slider: (pageSizeIndex) => ({
+    width: 'calc(100% + 8px)',
+    marginLeft: '-4px',
     color: 'transparent',
-    width: '100%',
     height: '8px',
-    paddingTop: '26px !important',
+    marginTop: '5px',
+    paddingTop: '29px !important',
     paddingBottom: '13px !important',
     '& .MuiSlider-mark': {
       display: 'none'
@@ -99,43 +105,42 @@ export const Styles = SxObject({
         boxShadow: 'none'
       },
       ...(pageSizeIndex === 0 && {
-        left: '4px !important'
+        left: '8px !important'
       }),
       ...(pageSizeIndex === 5 && {
-        left: 'calc(100% - 8px) !important'
+        left: 'calc(100% - 12px) !important'
       })
     },
     '& .MuiSlider-markLabel': {
-      top: '30px !important',
+      top: '29px !important',
       opacity: 0.5,
       color: '#fff',
-      fontWeight: 500,
-      fontSize: '16px',
-      letterSpacing: '0.15px',
-      lineHeight: '24px',
-      marginTop: '8px',
+      fontWeight: 400,
+      fontSize: '14px',
+      letterSpacing: '0.25px',
+      lineHeight: '21px',
+      marginTop: '14px',
       '&[data-index="0"]': {
-        left: '4px !important'
+        left: '8px !important'
       },
       '&[data-index="5"]': {
-        left: 'calc(100% - 8px) !important'
+        left: 'calc(100% - 12px) !important'
       },
       [`&[data-index="${pageSizeIndex}"]`]: {
         opacity: 1,
         ...(pageSizeIndex === 0 && {
-          left: '4px !important'
+          left: '8px !important'
         }),
         ...(pageSizeIndex === 5 && {
-          left: 'calc(100% - 8px) !important'
+          left: 'calc(100% - 12px) !important'
         })
       }
     }
   }),
   bottomLine: {
-    marginTop: '221px',
-    marginBottom: '210px',
+    marginTop: '210.5px',
     opacity: '0.1',
-    border: '1px solid #FFFFFF',
+    borderTop: '1px solid #FFFFFF',
     [IS_DESKTOP]: {
       marginTop: '30px',
       marginBottom: '2px'
