@@ -4,7 +4,12 @@ import { IS_DESKTOP } from 'src/constants/Styles';
 export const Styles = SxObject({
   skeletonsContainer: {
     marginLeft: '-34px',
-    width: 'calc(100% + 34px)'
+    width: 'calc(100% + 34px)',
+    '& div:nth-child(5)': {
+      [IS_DESKTOP]: {
+        marginBottom: '17.5px'
+      }
+    }
   },
   skeletonContainer: {
     paddingLeft: '34px !important'
@@ -38,7 +43,7 @@ export const Styles = SxObject({
     width: '45%',
     marginBottom: '12px',
     [IS_DESKTOP]: {
-      marginBottom: '20px'
+      marginBottom: '18px'
     }
   }
 });

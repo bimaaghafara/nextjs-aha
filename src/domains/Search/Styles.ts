@@ -45,7 +45,12 @@ export const Styles = SxObject({
   },
   usersContainer: {
     marginLeft: '-34px',
-    width: 'calc(100% + 34px)'
+    width: 'calc(100% + 34px)',
+    '& div:nth-child(5)': {
+      [IS_DESKTOP]: {
+        marginBottom: '17.5px'
+      }
+    }
   },
   userContainer: {
     paddingLeft: '34px !important'
@@ -76,12 +81,16 @@ export const Styles = SxObject({
     letterSpacing: '0.37px',
     marginBottom: '40px',
     [IS_DESKTOP]: {
-      marginBottom: '34px'
+      marginBottom: '32px'
     }
   },
   buttonMore: {
     [IS_DESKTOP]: {
-      width: '343px'
+      width: '345px',
+      marginTop: '6.5px',
+      marginLeft: '-1px',
+      paddingLeft: '17px',
+      paddingRight: '13px'
     }
   }
 });
