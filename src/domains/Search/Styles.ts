@@ -28,7 +28,9 @@ export const Styles = SxObject({
       marginLeft: '-16px',
       display: 'none',
       [IS_DESKTOP]: {
-        display: 'block'
+        display: 'block',
+        marginLeft: '-23px',
+        marginTop: '0.5px'
       }
     },
     '& p': {
@@ -36,7 +38,9 @@ export const Styles = SxObject({
       letterSpacing: '0.014px',
       [IS_DESKTOP]: {
         fontSize: '30px',
-        paddingLeft: '9px'
+        paddingLeft: '15px',
+        letterSpacing: '0.16px',
+        marginTop: '0.5px'
       }
     },
     [IS_DESKTOP]: {
