@@ -55,6 +55,8 @@ export const Styles = SxObject({
     color: '#fff',
     minWidth: 'unset',
     width: '60px',
+    letterSpacing: 0,
+    marginTop: '-0.5px',
     '&:hover': {
       color: '#121212',
       background: '#fff',
@@ -64,10 +66,11 @@ export const Styles = SxObject({
   },
   rightButtonFollowing: {
     width: '76px',
-    padding: '7px 7.5px',
+    padding: '7px 7px 7px 8px',
     color: '#121212',
     lineHeight: '12px',
     background: '#fff',
+    marginTop: '-0.5px',
     '&:hover': {
       color: '#fff',
       background: '#121212',

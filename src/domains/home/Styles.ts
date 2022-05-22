@@ -9,21 +9,23 @@ export const Styles = SxObject({
   },
   titleSearch: {
     color: '#fff',
-    fontSize: '24px'
+    fontSize: '24px',
+    letterSpacing: '0.05px'
   },
   textfieldKeyword: {
     marginTop: '16px',
     '& input': {
       color: '#fff',
       height: '27px',
-      padding: '16.5px 18px',
+      padding: '17.5px 18px 15.5px 18px',
       fontSize: '14px',
       letterSpacing: '0.25px'
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
         border: '3px solid rgba(255, 255, 255, 0.5)',
-        borderRadius: '6px'
+        borderRadius: '6px',
+        top: '-4px'
       },
       '&:hover fieldset': {
         border: '3px solid rgba(255, 255, 255, 0.5)'
@@ -37,10 +39,10 @@ export const Styles = SxObject({
     }
   },
   topLine: {
-    marginTop: '30px',
+    marginTop: '29px',
     marginBottom: '2px',
     opacity: '0.1',
-    border: '1px solid #FFFFFF',
+    borderTop: '1px solid #FFFFFF',
     display: 'none',
     [IS_DESKTOP]: {
       display: 'block'
@@ -50,7 +52,10 @@ export const Styles = SxObject({
     color: '#fff',
     fontSize: '24px',
     marginTop: '28px',
-    letterSpacing: '0.025px'
+    letterSpacing: '0.025px',
+    [IS_DESKTOP]: {
+      marginTop: '30px'
+    }
   },
   pageSize: {
     display: 'flex',
@@ -118,7 +123,7 @@ export const Styles = SxObject({
       fontWeight: 400,
       fontSize: '14px',
       letterSpacing: '0.25px',
-      lineHeight: '21px',
+      lineHeight: '150%',
       marginTop: '14px',
       '&[data-index="0"]': {
         left: '8px !important'
@@ -134,7 +139,14 @@ export const Styles = SxObject({
         ...(pageSizeIndex === 5 && {
           left: 'calc(100% - 12px) !important'
         })
+      },
+      [IS_DESKTOP]: {
+        fontSize: '16px'
       }
+    },
+    [IS_DESKTOP]: {
+      width: 'calc(100% + 1px)',
+      marginLeft: '1px'
     }
   }),
   bottomLine: {
@@ -142,7 +154,7 @@ export const Styles = SxObject({
     opacity: '0.1',
     borderTop: '1px solid #FFFFFF',
     [IS_DESKTOP]: {
-      marginTop: '30px',
+      marginTop: '22.5px',
       marginBottom: '2px'
     }
   },
@@ -152,11 +164,13 @@ export const Styles = SxObject({
     boxShadow: 'none',
     backgroundColor: '#fff',
     fontWeight: 700,
-    border: '1px solid #121212',
+    border: '1px solid #fff',
     color: '#121212',
     position: 'fixed',
     bottom: '66px',
     marginBottom: '24px',
+    letterSpacing: '0.125px',
+    paddingTop: '5px',
     '&:hover': {
       color: '#fff',
       backgroundColor: '#121212',

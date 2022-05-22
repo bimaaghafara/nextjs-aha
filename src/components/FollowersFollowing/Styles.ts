@@ -11,14 +11,15 @@ export const Styles = SxObject({
       color: '#929292',
       borderBottom: '2px solid #1f1f1f',
       textTransform: 'none',
-      fontWeight: 700,
+      fontWeight: 400,
       fontSize: '16px',
       lineHeight: '20px',
       letterSpacing: '0.15px',
-      paddingTop: '15px',
-      paddingBottom: '11px'
+      paddingTop: '17px',
+      paddingBottom: '9px'
     },
     '& .MuiTab-root.Mui-selected': {
+      fontWeight: 700,
       color: '#fff'
     },
     '& .MuiTabs-indicator': {
