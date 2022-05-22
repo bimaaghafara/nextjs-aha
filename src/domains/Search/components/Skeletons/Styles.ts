@@ -41,7 +41,7 @@ export const Styles = SxObject({
     transform: 'none',
     marginTop: '8.75px',
     width: '45%',
-    marginBottom: '12px',
+    marginBottom: '28px',
     [IS_DESKTOP]: {
       marginBottom: '18px'
     }
