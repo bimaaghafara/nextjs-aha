@@ -42,6 +42,11 @@ export const Styles = SxObject({
       sm: `calc(100% / 3)`,
       md: `calc(100% / 5)`
     },
+    maxWidth: {
+      xs: `calc(100% / 2)`,
+      sm: `calc(100% / 3)`,
+      md: `calc(100% / 5)`
+    },
     paddingLeft: '24px',
     paddingTop: '24px'
   },
@@ -61,8 +66,8 @@ export const Styles = SxObject({
     borderRadius: '8px',
     left: 10,
     bottom: 14,
+    maxWidth: '90%',
     '& > *': {
-      fontSize: '24px',
       letterSpacing: 0,
       fontWeight: 700,
       lineHeight: '150%',
@@ -71,6 +76,12 @@ export const Styles = SxObject({
       maxWidth: '107px',
       overflow: 'hidden',
       textOverflow: 'ellipsis'
+    },
+    '@media screen and (min-width: 375px)': {
+      maxWidth: 'unset',
+      '& > *': {
+        fontSize: '24px'
+      }
     }
   },
   tagName: {
