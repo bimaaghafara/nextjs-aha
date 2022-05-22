@@ -4,6 +4,9 @@ An app that you can search user from home page, and show them in search page. Th
 * Skeletons loader when waiting for api response.
 * Infinite load some list data (using react query)
 
+## Demo
+https://nextjs-aha-bimaaghafara.vercel.app/
+
 ## Installing
 ```
 npm install / yarn install
