@@ -1,3 +1,5 @@
+import { InfiniteData } from 'react-query';
+
 export type User = {
   avater: string;
   id: string;
@@ -12,6 +14,20 @@ export type GetUsersResponse = {
   pageSize: number;
   total: number;
   totalPages: number;
+};
+
+export type ContentProps = {
+  error: unknown;
+  isLoading: boolean;
+  data?: InfiniteData<{
+    response: GetUsersResponse;
+    nextPage: number | null;
+  }>;
+  pageSize: number;
+  noResults: boolean;
+  fetchNextPage: () => void;
+  isFetchingNextPage: boolean;
+  hasNextPage?: boolean;
 };
 
 export type SkeletonsProps = {
