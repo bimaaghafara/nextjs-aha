@@ -11,7 +11,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider';
 
-export default function Home() {
+export default function HomeContent() {
   const router = useRouter();
   const defaultpageSizesIndex = 2;
   const pageSizes = [3, 6, 9, 12, 15, 50];

@@ -1,4 +1,4 @@
 // styles & components
-import Content from './components/Content';
+import HomeContent from './components/Content';
 
-export default Content;
+export default HomeContent;

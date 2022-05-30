@@ -1,5 +1,5 @@
 // styles & components
-import Content from './components/Content';
+import TagsContent from './components/Content';
 
 // services
 import { useGetTags } from './Services';
@@ -12,5 +12,5 @@ export default function Tags() {
     data
   };
 
-  return <Content {...contentProps} />;
+  return <TagsContent {...contentProps} />;
 }

@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 // types
 import { ContentProps } from '../../types';
 
-export default function Content({ data, error, isLoading }: ContentProps) {
+export default function TagsContent({ data, error, isLoading }: ContentProps) {
   function renderContent() {
     if (error) return <>Error!</>;
     if (isLoading || !data) return <Skeletons />;

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 
 // styles & components
-import Content from './components/Content';
+import SearchContent from './components/Content';
 
 // services
 import { useGetInfiniteUsers } from './Services';
@@ -24,5 +24,5 @@ export default function Search() {
     hasNextPage
   };
 
-  return <Content {...contentProps} />;
+  return <SearchContent {...contentProps} />;
 }

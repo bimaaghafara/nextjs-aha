@@ -14,7 +14,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 // types
 import { ContentProps } from '../../types';
 
-export default function Content({
+export default function SearchContent({
   error,
   isLoading,
   data,
