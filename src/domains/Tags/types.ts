@@ -5,3 +5,9 @@ export type Tag = {
 };
 
 export type Tags = Tag[];
+
+export type ContentProps = {
+  error: unknown;
+  isLoading: boolean;
+  data?: Tags;
+};
